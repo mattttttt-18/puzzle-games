@@ -1,8 +1,3 @@
-var PLAY = 1;
-var END = 0;
-var gameState = PLAY;
-
-// Variables para las piezas
 var pieza1, pieza2, pieza3, pieza4, pieza5, pieza6;
 var px1, py1, px2, py2, px3, py3, px4, py4, px5, py5, px6, py6;
 var ganaste = false;
@@ -25,28 +20,40 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight); // Se ajusta el tamaño al de la ventana
 
-  // Crear las piezas del rompecabezas con las imágenes correspondientes
-  pieza1 = createSprite(width / 2 - 180, height / 2 - 90, 120, 180);
+  // Generar posiciones aleatorias para las piezas
+  var randomX1 = random(50, width - 200);
+  var randomY1 = random(50, height - 250);
+  pieza1 = createSprite(randomX1, randomY1, 120, 180);
   pieza1.addImage(pieza1Img);
   pieza1.setCollider("rectangle", 0, 0, 120, 180);
 
-  pieza2 = createSprite(width / 2 - 60, height / 2 - 90, 120, 180);
+  var randomX2 = random(50, width - 200);
+  var randomY2 = random(50, height - 250);
+  pieza2 = createSprite(randomX2, randomY2, 120, 180);
   pieza2.addImage(pieza2Img);
   pieza2.setCollider("rectangle", 0, 0, 120, 180);
 
-  pieza3 = createSprite(width / 2 + 60, height / 2 - 90, 120, 180);
+  var randomX3 = random(50, width - 200);
+  var randomY3 = random(50, height - 250);
+  pieza3 = createSprite(randomX3, randomY3, 120, 180);
   pieza3.addImage(pieza3Img);
   pieza3.setCollider("rectangle", 0, 0, 120, 180);
 
-  pieza4 = createSprite(width / 2 - 180, height / 2 + 90, 120, 180);
+  var randomX4 = random(50, width - 200);
+  var randomY4 = random(50, height - 250);
+  pieza4 = createSprite(randomX4, randomY4, 120, 180);
   pieza4.addImage(pieza4Img);
   pieza4.setCollider("rectangle", 0, 0, 120, 180);
 
-  pieza5 = createSprite(width / 2 - 60, height / 2 + 90, 120, 180);
+  var randomX5 = random(50, width - 200);
+  var randomY5 = random(50, height - 250);
+  pieza5 = createSprite(randomX5, randomY5, 120, 180);
   pieza5.addImage(pieza5Img);
   pieza5.setCollider("rectangle", 0, 0, 120, 180);
 
-  pieza6 = createSprite(width / 2 + 60, height / 2 + 90, 120, 180);
+  var randomX6 = random(50, width - 200);
+  var randomY6 = random(50, height - 250);
+  pieza6 = createSprite(randomX6, randomY6, 120, 180);
   pieza6.addImage(pieza6Img);
   pieza6.setCollider("rectangle", 0, 0, 120, 180);
 
@@ -65,7 +72,7 @@ function draw() {
   drawSprites();
 
   // Lógica de juego
-  if (gameState === PLAY) {
+  if (!ganaste) {
     // Mover las piezas con el mouse
     if (mouseIsPressed) {
       if (piezaArrastrando === null) {
@@ -91,7 +98,6 @@ function draw() {
     } else if (piezaArrastrando !== null) {
       if (checkWin()) {
         ganaste = true;
-        gameState = END;
       }
       piezaArrastrando = null; // Resetear la pieza arrastrando
     }
@@ -103,15 +109,6 @@ function draw() {
       textAlign(CENTER, CENTER);
       text("¡Ganaste!", width / 2, height / 2); // Centrado en la pantalla
     }
-  }
-
-  // Lógica de fin de juego
-  if (gameState === END) {
-    // Si el juego termina, mostrar el mensaje
-    textSize(32);
-    fill("red");
-    textAlign(CENTER, CENTER);
-    text("¡Fin del juego!", width / 2, height / 2 + 50);
   }
 }
 
