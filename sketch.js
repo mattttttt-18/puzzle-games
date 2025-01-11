@@ -20,44 +20,44 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight); // Se ajusta el tamaño al de la ventana
 
-  // Generar posiciones aleatorias para las piezas
-  var randomX1 = random(50, width - 200);
-  var randomY1 = random(50, height - 250);
+  // Generar posiciones aleatorias para las piezas, separadas más
+  var randomX1 = random(50, width - 300);
+  var randomY1 = random(50, height - 300);
   pieza1 = createSprite(randomX1, randomY1, 120, 180);
   pieza1.addImage(pieza1Img);
   pieza1.setCollider("rectangle", 0, 0, 120, 180);
 
-  var randomX2 = random(50, width - 200);
-  var randomY2 = random(50, height - 250);
+  var randomX2 = random(50, width - 300);
+  var randomY2 = random(50, height - 300);
   pieza2 = createSprite(randomX2, randomY2, 120, 180);
   pieza2.addImage(pieza2Img);
   pieza2.setCollider("rectangle", 0, 0, 120, 180);
 
-  var randomX3 = random(50, width - 200);
-  var randomY3 = random(50, height - 250);
+  var randomX3 = random(50, width - 300);
+  var randomY3 = random(50, height - 300);
   pieza3 = createSprite(randomX3, randomY3, 120, 180);
   pieza3.addImage(pieza3Img);
   pieza3.setCollider("rectangle", 0, 0, 120, 180);
 
-  var randomX4 = random(50, width - 200);
-  var randomY4 = random(50, height - 250);
+  var randomX4 = random(50, width - 300);
+  var randomY4 = random(50, height - 300);
   pieza4 = createSprite(randomX4, randomY4, 120, 180);
   pieza4.addImage(pieza4Img);
   pieza4.setCollider("rectangle", 0, 0, 120, 180);
 
-  var randomX5 = random(50, width - 200);
-  var randomY5 = random(50, height - 250);
+  var randomX5 = random(50, width - 300);
+  var randomY5 = random(50, height - 300);
   pieza5 = createSprite(randomX5, randomY5, 120, 180);
   pieza5.addImage(pieza5Img);
   pieza5.setCollider("rectangle", 0, 0, 120, 180);
 
-  var randomX6 = random(50, width - 200);
-  var randomY6 = random(50, height - 250);
+  var randomX6 = random(50, width - 300);
+  var randomY6 = random(50, height - 300);
   pieza6 = createSprite(randomX6, randomY6, 120, 180);
   pieza6.addImage(pieza6Img);
   pieza6.setCollider("rectangle", 0, 0, 120, 180);
 
-  // Posiciones correctas para cada pieza
+  // Posiciones correctas para cada pieza (centradas)
   px1 = width / 2 - 180; py1 = height / 2 - 90;
   px2 = width / 2 - 60; py2 = height / 2 - 90;
   px3 = width / 2 + 60; py3 = height / 2 - 90;
