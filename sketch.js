@@ -9,7 +9,7 @@ var ganaste = false;
 var piezaArrastrando = null;
 
 // Margen de tolerancia
-var tolerancia = 30; // Puedes ajustar este valor según sea necesario
+var tolerancia = 25;
 
 // Preload para cargar imágenes
 function preload() {
@@ -26,42 +26,42 @@ function setup() {
   createCanvas(windowWidth, windowHeight); // Se ajusta el tamaño al de la ventana
 
   // Crear las piezas del rompecabezas con las imágenes correspondientes
-  pieza1 = createSprite(width * 0.2, height * 0.25, 120, 180);
+  pieza1 = createSprite(width * 0.2, height * 0.25, 150, 200);
   pieza1.addImage(pieza1Img);
-  pieza1.setCollider("rectangle", 0, 0, 120, 180);
+  pieza1.setCollider("rectangle", 0, 0, 150, 200);
 
-  pieza2 = createSprite(width * 0.5, height * 0.25, 120, 180);
+  pieza2 = createSprite(width * 0.5, height * 0.25, 150, 200);
   pieza2.addImage(pieza2Img);
-  pieza2.setCollider("rectangle", 0, 0, 120, 180);
+  pieza2.setCollider("rectangle", 0, 0, 150, 200);
 
-  pieza3 = createSprite(width * 0.8, height * 0.25, 120, 180);
+  pieza3 = createSprite(width * 0.8, height * 0.25, 150, 200);
   pieza3.addImage(pieza3Img);
-  pieza3.setCollider("rectangle", 0, 0, 120, 180);
+  pieza3.setCollider("rectangle", 0, 0, 150, 200);
 
-  pieza4 = createSprite(width * 0.2, height * 0.5, 120, 180);
+  pieza4 = createSprite(width * 0.2, height * 0.55, 150, 200);
   pieza4.addImage(pieza4Img);
-  pieza4.setCollider("rectangle", 0, 0, 120, 180);
+  pieza4.setCollider("rectangle", 0, 0, 150, 200);
 
-  pieza5 = createSprite(width * 0.5, height * 0.5, 120, 180);
+  pieza5 = createSprite(width * 0.5, height * 0.55, 150, 200);
   pieza5.addImage(pieza5Img);
-  pieza5.setCollider("rectangle", 0, 0, 120, 180);
+  pieza5.setCollider("rectangle", 0, 0, 150, 200);
 
-  pieza6 = createSprite(width * 0.8, height * 0.5, 120, 180);
+  pieza6 = createSprite(width * 0.8, height * 0.55, 150, 200);
   pieza6.addImage(pieza6Img);
-  pieza6.setCollider("rectangle", 0, 0, 120, 180);
+  pieza6.setCollider("rectangle", 0, 0, 150, 200);
 
   // Posiciones correctas para cada pieza
   px1 = width * 0.2; py1 = height * 0.25;
   px2 = width * 0.5; py2 = height * 0.25;
   px3 = width * 0.8; py3 = height * 0.25;
-  px4 = width * 0.2; py4 = height * 0.5;
-  px5 = width * 0.5; py5 = height * 0.5;
-  px6 = width * 0.8; py6 = height * 0.5;
+  px4 = width * 0.2; py4 = height * 0.55;
+  px5 = width * 0.5; py5 = height * 0.55;
+  px6 = width * 0.8; py6 = height * 0.55;
 }
 
 // Función principal de dibujo
 function draw() {
-  background("lightblue");
+  background("#a7d8ff"); // Fondo azul suave
   drawSprites();
 
   // Lógica de juego
@@ -99,7 +99,7 @@ function draw() {
     // Mostrar mensaje de "¡Ganaste!" si se ha ganado
     if (ganaste) {
       textSize(48);
-      fill("green");
+      fill("#27ae60"); // Verde brillante
       textAlign(CENTER, CENTER);
       text("¡Ganaste!", width / 2, height / 2); // Centrado en la pantalla
     }
@@ -109,7 +109,7 @@ function draw() {
   if (gameState === END) {
     // Si el juego termina, mostrar el mensaje
     textSize(32);
-    fill("red");
+    fill("#e74c3c"); // Rojo brillante
     textAlign(CENTER, CENTER);
     text("¡Fin del juego!", width / 2, height / 2 + 50);
   }
